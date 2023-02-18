@@ -1,7 +1,8 @@
+import { Board } from "./components/Board";
+import './App.scss'
+
 export function App() {
   return (
-    <h1>
-      Hello World!
-    </h1>
+    <Board />
   )
 }
