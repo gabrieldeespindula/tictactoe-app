@@ -1,0 +1,29 @@
+#board{
+  width: 80vw;
+  max-width: 600px;
+  height: 80vw;
+  max-height: 600px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 50px auto;
+
+  .square {
+    border: 1px solid white;
+
+    &.border-0, &.border-1, &.border-2{
+      border-top: 0;
+    }
+
+    &.border-0, &.border-3, &.border-6{
+      border-left: 0;
+    }
+
+    &.border-2, &.border-5, &.border-8{
+      border-right: 0;
+    }
+
+    &.border-6, &.border-7, &.border-8{
+      border-bottom: 0;
+    }
+  }
+}
