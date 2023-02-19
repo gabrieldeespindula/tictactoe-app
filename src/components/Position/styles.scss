@@ -1,0 +1,27 @@
+.square {
+  border: 1px solid white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  cursor: pointer;
+
+  &.square-0, &.square-1, &.square-2{
+    border-top: 0;
+  }
+
+  &.square-0, &.square-3, &.square-6{
+    border-left: 0;
+  }
+
+  &.square-2, &.square-5, &.square-8{
+    border-right: 0;
+  }
+
+  &.square-6, &.square-7, &.square-8{
+    border-bottom: 0;
+  }
+
+  &.disabled{
+    cursor: default;
+  }
+}
