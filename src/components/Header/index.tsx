@@ -29,7 +29,7 @@ export function Header({ gameCount, winCount, currentTeam }: Props) {
           <div className="title">
             <div>Ties</div>
           </div>
-          <div className="value">{winCount.ties}</div>
+          <div className="value">{winCount.tie}</div>
         </div>
         <div className={`score-box ${currentTeam === Team.X && 'shift'}`}>
           <div className='title'>

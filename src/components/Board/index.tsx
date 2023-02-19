@@ -7,7 +7,7 @@ import './styles.scss'
 
 type Props = {
   isGameOver: boolean;
-  onGameOver: (team?: Team) => void;
+  onGameOver: (team: Team | 'tie') => void;
   restartGame: boolean;
   currentTeam: Team;
   changeShift: () => void;
@@ -30,9 +30,12 @@ export function Board({ isGameOver, onGameOver, restartGame, currentTeam, change
       return square;
     })
     setBoard(newBoard);
-    if(!verifyEndGame(newBoard)) return changeShift();
 
-    onGameOver(winningMoveClass ? currentTeam : undefined);
+    const winningMove = verifyEndGame(newBoard);
+
+    if(!winningMove) return changeShift();
+
+    onGameOver(winningMove);
   }
 
   function verifyEndGame(board: Square[]){
@@ -57,7 +60,10 @@ export function Board({ isGameOver, onGameOver, restartGame, currentTeam, change
 
     setWinningMoveClass(winningCombination?.winClass || '')
 
-    return winningCombination || squares.length === 9
+    if(winningCombination) return currentTeam;
+    if(squares.length === 9) return 'tie';
+
+    return false
   }
 
   useEffect(() => {

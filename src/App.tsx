@@ -12,7 +12,7 @@ export function App() {
   const [winCount, setwinCount] = useState({
     [Team.X]: 0,
     [Team.O]: 0,
-    ties: 0
+    tie: 0
   });
   const [currentTeam, setCurrentTeam] = useState(Team.X);
 
@@ -21,11 +21,10 @@ export function App() {
     setRestartGame(!restartGame)
   }
 
-  function onGameOver(team?: Team){
+  function onGameOver(team: Team | 'tie'){
     setIsGameOver(true)
     setGameCount((prev) => prev + 1)
-    const winner = team || 'ties'
-    setwinCount({ ...winCount, [winner]: winCount[winner] + 1 })
+    setwinCount({ ...winCount, [team]: winCount[team] + 1 })
     changeShift()
   }
 
