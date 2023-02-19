@@ -1,6 +1,6 @@
-# Tictactoe App 
+# Tictactoe App
 
-Simple tictactoe app using react, typescript, vite, yarn and jest.
+Simple tictactoe app using react, typescript, vite, yarn.
 
 ## Getting Started
 
