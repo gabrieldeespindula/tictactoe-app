@@ -7,18 +7,20 @@ type Props = {
   winCount: {
     [key: string]: number;
   }
+  currentTeam: Team;
 };
 
-export function Header({ gameCount, winCount }: Props) {
-  console.log('winCount', winCount)
+export function Header({ gameCount, winCount, currentTeam }: Props) {
+  console.log(currentTeam)
+
   return (
     <div id='header'>
       <div className='game-count'>
-        <span>Game {gameCount}</span>
+        <span>Games {gameCount}</span>
       </div>
       <div className="score-count">
-        <div className="score-box">
-          <div className="title">
+        <div className={`score-box ${currentTeam === Team.O && 'shift'}`}>
+          <div className='title'>
             <div className={`img-${Team.O}`}></div>
           </div>
           <div className="value">{winCount[Team.O]}</div>
@@ -29,8 +31,8 @@ export function Header({ gameCount, winCount }: Props) {
           </div>
           <div className="value">{winCount.ties}</div>
         </div>
-        <div className="score-box">
-          <div className="title">
+        <div className={`score-box ${currentTeam === Team.X && 'shift'}`}>
+          <div className='title'>
             <div className={`img-${Team.X}`}></div>
           </div>
           <div className="value">{winCount[Team.X]}</div>

@@ -9,10 +9,11 @@ type Props = {
   isGameOver: boolean;
   onGameOver: (team?: Team) => void;
   restartGame: boolean;
+  currentTeam: Team;
+  changeShift: () => void;
 }
 
-export function Board({ isGameOver, onGameOver, restartGame }: Props) {
-  const [currentTeam, setCurrentTeam] = useState(Team.X);
+export function Board({ isGameOver, onGameOver, restartGame, currentTeam, changeShift }: Props) {
   const [board, setBoard] = useState(initialBoard);
   const [winningMoveClass, setWinningMoveClass] = useState('');
 
@@ -29,7 +30,7 @@ export function Board({ isGameOver, onGameOver, restartGame }: Props) {
       return square;
     })
     setBoard(newBoard);
-    if(!verifyEndGame(newBoard)) return setCurrentTeam(currentTeam === Team.X ? Team.O : Team.X);
+    if(!verifyEndGame(newBoard)) return changeShift();
     onGameOver(currentTeam);
   }
 
@@ -60,7 +61,6 @@ export function Board({ isGameOver, onGameOver, restartGame }: Props) {
 
   useEffect(() => {
     setBoard(initialBoard);
-    setCurrentTeam(Team.X);
     setWinningMoveClass('');
   }, [restartGame])
 
