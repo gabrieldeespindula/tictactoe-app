@@ -24,9 +24,8 @@ export function App() {
   function onGameOver(team?: Team){
     setIsGameOver(true)
     setGameCount((prev) => prev + 1)
-    if(team){
-      setwinCount({ ...winCount, [team]: winCount[team] + 1 })
-    }
+    const winner = team || 'ties'
+    setwinCount({ ...winCount, [winner]: winCount[winner] + 1 })
     changeShift()
   }
 

@@ -31,7 +31,8 @@ export function Board({ isGameOver, onGameOver, restartGame, currentTeam, change
     })
     setBoard(newBoard);
     if(!verifyEndGame(newBoard)) return changeShift();
-    onGameOver(currentTeam);
+
+    onGameOver(winningMoveClass ? currentTeam : undefined);
   }
 
   function verifyEndGame(board: Square[]){
@@ -56,7 +57,7 @@ export function Board({ isGameOver, onGameOver, restartGame, currentTeam, change
 
     setWinningMoveClass(winningCombination?.winClass || '')
 
-    return winningCombination
+    return winningCombination || squares.length === 9
   }
 
   useEffect(() => {
