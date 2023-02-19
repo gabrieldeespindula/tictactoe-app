@@ -7,23 +7,76 @@
   grid-template-columns: repeat(3, 1fr);
   margin: 50px auto;
 
-  .square {
-    border: 1px solid white;
 
-    &.border-0, &.border-1, &.border-2{
-      border-top: 0;
-    }
 
-    &.border-0, &.border-3, &.border-6{
-      border-left: 0;
-    }
+  &.win-horizontal-1{
+    background: linear-gradient(
+      transparent calc(16.6% - 1px),
+      #fff calc(16.6%),
+      transparent calc(16.6% + 1px)
+    );
+  }
 
-    &.border-2, &.border-5, &.border-8{
-      border-right: 0;
-    }
 
-    &.border-6, &.border-7, &.border-8{
-      border-bottom: 0;
-    }
+  &.win-horizontal-2{
+    background: linear-gradient(
+      transparent calc(50% - 1px),
+      #fff calc(50%),
+      transparent calc(50% + 1px)
+    );
+  }
+
+
+  &.win-horizontal-3{
+    background: linear-gradient(
+      transparent calc(82.8% - 1px),
+      #fff calc(82.8%),
+      transparent calc(82.8% + 1px)
+    );
+  }
+
+
+  &.win-vertical-1{
+    background: linear-gradient(90deg,
+      transparent calc(16.6% - 1px),
+      #fff calc(16.6%),
+      transparent calc(16.6% + 1px)
+    );
+  }
+
+
+  &.win-vertical-2{
+    background: linear-gradient(90deg,
+      transparent calc(50% - 1px),
+      #fff calc(50%),
+      transparent calc(50% + 1px)
+    );
+  }
+
+
+  &.win-vertical-3{
+    background: linear-gradient(90deg,
+      transparent calc(82.8% - 1px),
+      #fff calc(82.8%),
+      transparent calc(82.8% + 1px)
+    );
+  }
+
+
+  &.win-diagonal-up-down{
+    background: linear-gradient(45deg,
+    transparent calc(50% - 1px),
+    #fff calc(50%),
+    transparent calc(50% + 1px)
+    );
+  }
+
+
+  &.win-diagonal-down-up{
+    background: linear-gradient(135deg,
+    transparent calc(50% - 1px),
+    #fff calc(50%),
+    transparent calc(50% + 1px)
+    );
   }
 }

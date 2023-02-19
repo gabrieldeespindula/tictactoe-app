@@ -1,6 +1,6 @@
-# Tictactoe App 
+# Tictactoe App
 
-Simple tictactoe app using react, typescript, vite, yarn and jest.
+Simple tictactoe app using react, typescript, vite, yarn.
 
 ## Getting Started
 
@@ -14,7 +14,3 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 The page will reload if you make edits.
-
-### `yarn test`
-
-Runs app tests and coverage.
